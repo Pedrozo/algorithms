@@ -3,21 +3,21 @@ Coleção de algoritmos e técnicas utilizadas em programação competitiva, na 
 
 ## Tópicos
 
-#### Searching and Sorting
+### Searching and Sorting
 * Binary Search
 * Quick Sort
 * Merge Sort
 
-#### Data Structures
+### Data Structures
 * Segment Tree
 	* RMQ
 	* Range Sum
 	* Lazy Propagation
 * Sufix Tree
 
-#### Strings
+### Strings
 
-#### Graphs
+### Graphs
 * Breadth First Search
 * Depth First Search
 * Dijkstra
@@ -26,11 +26,11 @@ Coleção de algoritmos e técnicas utilizadas em programação competitiva, na 
 * Kruskal
 * Topological Sort
 
-#### Mathematics
+### Mathematics
 
-#### Geometry
+### Geometry
 
-#### Dynamic Programming
+### Dynamic Programming
 * Longest Common Subsequence
 * Longest Increasing Subsequence
 * Edit Distance
