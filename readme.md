@@ -9,7 +9,7 @@ Coleção de algoritmos e técnicas utilizadas em programação competitiva, na 
 * Merge Sort
 
 ### Data Structures
-* Segment Tree
+* [Segment Tree](Data-Structures/Segment-Tree/segment-tree.cpp)
 	* RMQ
 	* Range Sum
 	* Lazy Propagation
