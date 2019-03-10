@@ -1,5 +1,5 @@
 # Competitive Programming
-Coleção de algoritmos e técnicas utilizadas em programação competitiva, na linguagem **C++**.
+Algoritmos e técnicas utilizadas em programação competitiva.
 
 ## Tópicos
 
@@ -9,9 +9,9 @@ Coleção de algoritmos e técnicas utilizadas em programação competitiva, na 
 * Merge Sort
 
 ### Data Structures
-* [Segment Tree](Data-Structures/Segment-Tree/segment-tree.cpp)
-	* RMQ
-	* Range Sum
+* [Segment Tree](Data-Structures/Segment-Tree/)
+	* [Range Sum Query](Data-Structures/Segment-Tree/rsq.cpp)
+	* [Range Minimum Query](Data-Structures/Segment-Tree/rmq.cpp)
 	* Lazy Propagation
 * Sufix Tree
 

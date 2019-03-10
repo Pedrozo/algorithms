@@ -1,3 +1,8 @@
+/**
+ * Range Sum Query
+ * 
+ * Cada query retorna a soma em um determinado intervalo
+ */
 #include <iostream>
 
 using namespace std;
@@ -25,11 +30,13 @@ void build(int node, int start, int end) {
 }
 
 void build() {
-    build(1, 0, n - 1);
+    build(1, 1, n);
 }
 
 /**
  * Atualiza o valor de um dos nós
+ * 
+ * Complexidade: O(log n)
  * 
  * node - nó atual da arvore
  * start - posição inicial atual do intervalo no vetor
@@ -55,12 +62,14 @@ void update(int node, int start, int end, int index, int value) {
 }
 
 void update(int index, int value) {
-    update(1, 0, n - 1, index, value);
+    update(1, 1, n, index, value);
 }
 
 /**
  * Retorna a soma dos elementos no intervalo de l até r
  * 
+ * Complexidade: O(log n)
+ *
  * node - nó atual da arvore
  * start - posição inicial atual do intervalo no vetor
  * end - posição final atual do intervalo no vetor
@@ -86,29 +95,41 @@ int query(int node, int start, int end, int l, int r) {
 }
 
 int query(int l, int r) {
-    return query(1, 0, n - 1,l ,r);
+    return query(1, 1, n, l, r);
 }
 
 int main() {
-
+    char op;
+    int a, b;
+    
     cin >> n;
 
-    for (int i = 0; i < n; i++) {
+    // A[0] não é utilizado
+    // elementos vão de A[1] até A[n]
+    for (int i = 1; i <= n; i++) {
         cin >> A[i];
     }
 
     build();
 
-    while (true) {
-        int l, r;
+    // até EOF
+    while (cin >> op >> a >> b) {
+        switch (op) {
 
-        cout << "l = ";
-        cin >> l;
+            // update
+            // elemento na posição a é alterado para o valor b
+            case 'u':
+            case 'U':
+                update(a,b);
+                break;
 
-        cout << "r = ";
-        cin >> r;
-
-        cout << "query = " << query(l,r) << endl << endl;;
+            // query
+            // soma dos elementos da posição a até b
+            case 'q':
+            case 'Q':
+                cout << query(a,b) << endl;
+                break;
+        }
     }
     
     return 0;
