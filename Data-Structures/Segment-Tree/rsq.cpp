@@ -66,7 +66,7 @@ void update(int index, int value) {
 }
 
 /**
- * Retorna a soma dos elementos no intervalo de l até r
+ * Retorna o menor dos elementos no intervalo de l até r
  * 
  * Complexidade: O(log n)
  *
