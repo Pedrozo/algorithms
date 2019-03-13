@@ -16,7 +16,7 @@ int x;
 scanf("%d", &x);
 ```
 
-Apesar de ambos aparentemente surtirem o mesmo efeito, `scanf` é bem mais rápido que `cin`. Mas, existe uma forma de deixar `cin` tão rápido quanto `scanf`.
+Apesar de ambos aparentemente surtirem o mesmo efeito, `scanf` é bem mais rápido que `cin`. Para deixar `cin` tão rápido quanto `scanf` é só chamar as funções:
 
 ```c++
 // Isso desabilita a sincronização no IO,
@@ -39,7 +39,7 @@ cout << n << endl;
 cout << n << '\n';
 ```
 
-Se for necessário ainda mais performance, é possível utilizar o `getchar()`, que pega o próximo caracter do buffer de entrada. Existem também o `getchar_unlocked()`, que é ainda mais rápido por que não é Thread-Safe.
+Se for necessário ainda mais performance, é possível utilizar o `getchar()`, que pega o próximo caracter do buffer de entrada. Existem também o `getchar_unlocked()`, que é ainda mais rápido já não é Thread-Safe.
 
 ```c++
 char a,b;
@@ -49,4 +49,28 @@ a = getchar();
 
 // Ainda mais rápido
 b = getchar_unlocked();
+```
+
+Abaixo temos uma função bem rápida para leitura de inteiros.
+
+```c++
+void fastscan(int &n)  { 
+    register int c; 
+    bool negative = false; 
+
+    n = 0;
+
+    c = getchar(); 
+    
+    if (c == '-') {
+        negative = true; 
+        c = getchar(); 
+    }
+  
+    for (; (c >= '0' && c <= '9'); c = getchar())
+        n = n * 10 + c - '0'; 
+  
+    if (negative) 
+        n = -n; 
+}
 ```
