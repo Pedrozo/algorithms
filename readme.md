@@ -34,7 +34,7 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 ### Geometry
 
 ### Dynamic Programming
-* Longest Common Subsequence
+* [Longest Common Subsequence](Dynamic-Programming/Longest-Common-Subsequence/lcs.cpp)
 * Longest Increasing Subsequence
 * Edit Distance
 * Minimum Partition
