@@ -1,7 +1,12 @@
+/**
+ * Longest Common Subsequence
+ * 
+ * Testado: https://practice.geeksforgeeks.org/problems/longest-common-subsequence/0
+ */
 #include <iostream>
 #include <string.h>
 
-#define SIZE 1010
+#define SIZE 101
 
 using namespace std;
 
@@ -25,10 +30,16 @@ int lcs(int i, int j) {
 }
 
 int main() {
+    int quant, n, m;
+
+    cin >> quant;
     memset(dp, -1, sizeof dp);
 
-    cin >> s1 >> s2;
-    cout << lcs(0,0) << endl;
-
+    while (quant--) {
+        cin >> n >> m >> s1 >> s2;
+        cout << lcs(0,0) << endl;
+        memset(dp, -1, sizeof dp);
+    }
+    
     return 0;
 }
