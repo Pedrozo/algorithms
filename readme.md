@@ -15,6 +15,7 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 * [Segment Tree](Data-Structures/Segment-Tree/)
 	* [Range Sum Query](Data-Structures/Segment-Tree/rsq.cpp)
 	* [Range Minimum Query](Data-Structures/Segment-Tree/rmq.cpp)
+	* [Count Zeros](Data-Structures/Segment-Tree/count-zeros.cpp)
 	* Lazy Propagation
 * Sufix Tree
 

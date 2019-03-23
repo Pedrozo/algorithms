@@ -1,3 +1,9 @@
+/**
+ * Count Zeros
+ * 
+ * Árvore de segmentos que consegue contar a quantidade de 0s 
+ * e também recuperar a posição do k-ésimo 0 na sequência
+ */
 #include <iostream>
 
 #define SIZE 1000
@@ -37,6 +43,9 @@ void update(int node, int start, int end, int index, int value) {
     tree[node] = tree[node * 2] + tree[node * 2 + 1];
 }
 
+/**
+ * Conta a quantidade de 0s no intervalo
+ */
 int count_zeros(int node, int start, int end, int l, int r) {
     if (l > end || r < start) {
         return 0;
@@ -52,6 +61,9 @@ int count_zeros(int node, int start, int end, int l, int r) {
     return a + b;
 }
 
+/**
+ * Consegue o índice do k-ésimo 0 na sequência
+ */
 int search(int node, int start, int end, int k) {
     if (start == end) {
         return start;
