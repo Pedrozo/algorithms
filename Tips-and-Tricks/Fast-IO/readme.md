@@ -16,7 +16,7 @@ int x;
 scanf("%d", &x);
 ```
 
-Apesar de ambos aparentemente surtirem o mesmo efeito, `scanf` é bem mais rápido que `cin`. Para deixar `cin` tão rápido quanto `scanf` é só chamar as funções:
+Apesar de ambos aparentemente surtirem o mesmo efeito, `scanf` é bem mais rápido que `cin`. Para deixar `cin` mais rápido (mas ainda não tão rápido quanto o `scanf`) podemos utilizar as funções:
 
 ```c++
 // Isso desabilita a sincronização no IO,
