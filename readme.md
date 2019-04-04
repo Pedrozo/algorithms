@@ -5,6 +5,7 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 
 ### Tips and Tricks
 * [Fast IO](Tips-and-Tricks/Fast-IO/readme.md)
+* [IO Utils](Tips-and-Tricks/IO-Utils/readme.md)
 
 ### Searching and Sorting
 * Binary Search
