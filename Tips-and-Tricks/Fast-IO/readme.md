@@ -39,7 +39,7 @@ cout << n << endl;
 cout << n << '\n';
 ```
 
-Se for necessário ainda mais performance, é possível utilizar o `getchar()`, que pega o próximo caracter do buffer de entrada. Existem também o `getchar_unlocked()`, que é ainda mais rápido já não é Thread-Safe.
+Se for necessário ainda mais performance, é possível utilizar o `getchar()`, que pega o próximo caracter do buffer de entrada. Existem também o `getchar_unlocked()`, que é ainda mais rápido já que não é Thread-Safe, porém funciona apenas em computadores Linux.
 
 ```c++
 char a,b;

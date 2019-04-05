@@ -10,7 +10,7 @@ Quando fazemos a leitura de uma linha inteira, ou sequência de caractéres que 
 o simples `gets` (mas bastante perigoso)
 
 ```c++
-    char *ptr = gets();
+    gets(char *ptr);
 ```
 
 ou os mais indicado o `fgets`
