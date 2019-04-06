@@ -14,10 +14,10 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 
 ### Data Structures
 * [Segment Tree](Data-Structures/Segment-Tree/)
-	* [Range Sum Query](Data-Structures/Segment-Tree/rsq.cpp)
-	* [Range Minimum Query](Data-Structures/Segment-Tree/rmq.cpp)
-	* [Count Zeros](Data-Structures/Segment-Tree/count-zeros.cpp)
-	* Lazy Propagation
+  * [Range Sum Query](Data-Structures/Segment-Tree/rsq.cpp)
+  * [Range Minimum Query](Data-Structures/Segment-Tree/rmq.cpp)
+  * [Count Zeros](Data-Structures/Segment-Tree/count-zeros.cpp)
+  * Lazy Propagation
 * Sufix Tree
 
 ### Strings
@@ -36,6 +36,11 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 ### Geometry
 
 ### Dynamic Programming
+* Fibonacci
+  * [Divide and Conquer](Dynamic-Programming/Fibonacci/fib_div_conq.cpp)
+  * [Top Down Memoization](Dynamic-Programming/Fibonacci/fib_top_down.cpp)
+  * [Bottom Up Memoization](Dynamic-Programming/Fibonacci/fib_bottom_up.cpp)
+  * [Bottom Up Memoization O(1) Memory](Dynamic-Programming/Fibonacci/fib_bottom_up_lowmem.cpp)
 * [Longest Common Subsequence](Dynamic-Programming/Longest-Common-Subsequence/lcs.cpp)
 * Longest Increasing Subsequence
 * Edit Distance
