@@ -7,6 +7,9 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 * [Fast IO](Tips-and-Tricks/Fast-IO/readme.md)
 * [IO Utils](Tips-and-Tricks/IO-Utils/readme.md)
 
+### Basics
+* [Euclidean Algorithm](Basics/Euclidean-Algorithm/gcd.cpp)
+
 ### Searching and Sorting
 * Binary Search
 * Quick Sort
