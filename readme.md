@@ -28,7 +28,7 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 ### Graphs
 * Breadth First Search
 * Depth First Search
-* Dijkstra
+* [Dijkstra](Graphs/Dijkstra/dijkstra.cpp)
 * Floyd Warshall
 * Prim
 * Kruskal
