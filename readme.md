@@ -30,7 +30,7 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 * Depth First Search
 * [Dijkstra](Graphs/Dijkstra/dijkstra.cpp)
 * Floyd Warshall
-* Prim
+* [Prim](Graphs/Prim/prim.cpp)
 * Kruskal
 * Topological Sort
 
