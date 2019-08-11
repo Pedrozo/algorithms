@@ -3,7 +3,6 @@
  * 
  * Testado em: https://www.hackerearth.com/pt-br/practice/algorithms/graphs/minimum-spanning-tree/tutorial/
  */
-
 #include <bits/stdc++.h>
 #define pii pair<int, int>
 #define SIZE 10100
