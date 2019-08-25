@@ -13,7 +13,7 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 ### Searching and Sorting
 * Binary Search
 * Quick Sort
-* Merge Sort
+* [Merge Sort](Searching-and-Sorting/Merge_Sort.cpp)
 
 ### Data Structures
 * [Segment Tree](Data-Structures/Segment-Tree/)
@@ -25,7 +25,7 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 ### Strings
 * Sufix Array
 * Sufix Tree
-* Sufix Automata
+* [Sufix Automata](Strings/Sufix_Automata.cpp)
 
 ### Graphs
 * [Depth First Search](Graphs/Depth-First-Search/dfs.cpp)
