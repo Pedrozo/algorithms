@@ -8,7 +8,6 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 * [IO Utils](Tips-and-Tricks/IO-Utils/readme.md)
 
 ### Basics
-* [Euclidean Algorithm](Basics/Euclidean-Algorithm/gcd.cpp)
 
 ### Searching and Sorting
 * Binary Search
@@ -37,8 +36,9 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 * Topological Sort
 
 ### Mathematics
-
-### Geometry
+* [Primal Test](Mathematics/PrimalTest/O(sqrt(n)).cpp)
+* [Euclidean Algorithm](Mathematics/Euclidean-Algorithm/gcd.cpp)
+* [Convex Hull](Mathematics/Convex_Hull.cpp)
 
 ### Dynamic Programming
 * Fibonacci
