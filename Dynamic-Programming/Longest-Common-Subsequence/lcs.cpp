@@ -14,7 +14,7 @@ string s1, s2;
 int dp[SIZE][SIZE];
 
 /**
- * Menor subsequência comum das strings s1 e s2,
+ * Maior subsequência comum das strings s1 e s2,
  * a partir dos indices i e j, respectivamente.
  */
 int lcs(int i, int j) {
