@@ -1,10 +1,21 @@
+/*
+ * Lowest Common Ancestor
+ *
+ * Encontra o ancestral comum mais próximo utilizando tour de euler e arvore de segmentos
+ *
+ * Testado: https://www.urionlinejudge.com.br/judge/pt/problems/view/1135
+ * Para melhor entendimento: https://www.hackerrank.com/topics/lowest-common-ancestor e  https://cp-algorithms.com/graph/lca.html
+ */
+
 #include <bits/stdc++.h>
+#define DEBUG(t) cout << #t << " " << t << endl
 #define pii pair<int, int>
 #define SIZE 100100
 
 using namespace std;
 
 int n; // quantidade de vértices
+int e; // tamanho de euler
 vector<pii> grafo[SIZE];
 
 /*
@@ -12,8 +23,11 @@ height = altura de cada nó
 euler  = ordem em que os nós são visitados durante a busca em profundidade, com repetições
 first  = indice que o nó parece pela primeira vez em 'euler' (f[i] = primeira ocorrencia do nó i em euler)
 */
-vector<int> height, euler, first, segtree;
-vector<bool> visited;
+int segtree[SIZE * 8];
+long long int dist[SIZE];
+int euler[SIZE * 2];
+int height[SIZE];
+int first[SIZE];
 
 void init();
 void dfs(int v, int h);
@@ -22,31 +36,30 @@ int query(int node, int start, int end, int l, int r);
 int lca(int u, int v);
 
 void init() {
-    height.resize(n);
-    first.resize(n);
-    euler.resize(n * 2);
-    visited.assign(n, false);
+    memset(dist, -1, n * sizeof(long long int));
 
-    dfs(1, 0);
+    e = 1;
+    euler[0] = 0;
+    dist[0] = 0;
 
-    int m = euler.size();
-    segtree.resize(m * 4); // sei la por que vezes 4...
+    dfs(0, 0);
 
-    build(1, 0, m - 1);
+    build(1, 0, e - 1);
 }
 
 void dfs(int v, int h) {
-    visited[v] = true;
     height[v] = h;
-    first[v] = euler.size(); // ultima posição de euler
+    first[v] = e - 1; // ultima posição de euler
 
     for (pii p : grafo[v]) {
         int u = p.second;
         int d = p.first;
 
-        if (!visited[u]) {
+        if (dist[u] == -1) {
+            dist[u] = dist[v] + d;
+            euler[e++] = u;
             dfs(u, h + 1);
-            euler.push_back(v);
+            euler[e++] = v;
         }
     }
 }
@@ -59,25 +72,22 @@ void build(int node, int start, int end) {
         build(node * 2, start, mid);
         build(node * 2 + 1, mid + 1, end);
 
-        int l = segtree[node * 2];
-        int r = segtree[node * 2 + 1];
+        int left = segtree[node * 2];
+        int right = segtree[node * 2 + 1];
 
-        segtree[node] = (height[l] < height[r]) ? l : r;
+        segtree[node] = (height[left] < height[right]) ? left : right;
     }
 }
 
 int query(int node, int start, int end, int l, int r) {
-    // os intervalos estão totalmente fora um do outro
     if (r < start || l > end) {
         return -1;
     }
 
-    // o intervalo start-end esta totalmente dentro do intervalo l-r
     if (l <= start && r >= end) {
         return segtree[node];
     }
 
-    // os intervalos estão parcialmente dentro um do outro
     int mid = (start + end) / 2;
     int left = query(node * 2, start, mid, l, r);
     int right = query(node * 2 + 1, mid + 1, end, l, r);
@@ -98,44 +108,48 @@ int lca(int u, int v) {
     if (left > right)
         swap(left, right);
     
-    return query(1, 0, euler.size() - 1, left, right);
+    return query(1, 0, e - 1, left, right);
 }
 
 int main() {
-    n = 11;
+    while (true) {
+        cin >> n;
 
-    grafo[1].push_back(make_pair(1, 2));
-    grafo[1].push_back(make_pair(1, 3));
+        if (!n)
+            break;
 
-    grafo[2].push_back(make_pair(1, 1));
-    grafo[2].push_back(make_pair(1, 4));
-    grafo[2].push_back(make_pair(1, 5));
+        for (int i = 0; i < n; i++) {
+            grafo[i].clear();
+        }
 
-    grafo[3].push_back(make_pair(1, 1));
-    grafo[3].push_back(make_pair(1, 6));
-    grafo[3].push_back(make_pair(1, 7));
+        for (int v = 1; v <= n - 1; v++) {
+            int u, d;
+            scanf("%d %d", &u, &d);
 
-    grafo[4].push_back(make_pair(1, 2));
+            grafo[u].push_back(make_pair(d, v));
+            grafo[v].push_back(make_pair(d, u));
+        }
 
-    grafo[5].push_back(make_pair(1, 2));
-    grafo[5].push_back(make_pair(1, 8));
-    grafo[5].push_back(make_pair(1, 9));
-    grafo[5].push_back(make_pair(1, 10));
+        init();
 
-    grafo[6].push_back(make_pair(1, 3));
-    grafo[6].push_back(make_pair(1, 11));
+        int q;
+        scanf("%d", &q);
 
-    grafo[7].push_back(make_pair(1, 3));
+        for (int i = 0; i < q; i++) {
+            int u, v, a;
+            scanf("%d %d", &u, &v);
 
-    grafo[8].push_back(make_pair(1, 5));
+            a = lca(u, v);
 
-    grafo[9].push_back(make_pair(1, 5));
+            if (i) {
+                printf(" ");
+            }
 
-    grafo[10].push_back(make_pair(1, 5));
+            cout << (dist[u] - dist[a]) + (dist[v] - dist[a]);
+        }
 
-    grafo[11].push_back(make_pair(1, 6));
-
-    init();
+        cout << endl;
+    }
     
     return 0;
 }
