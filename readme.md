@@ -34,6 +34,7 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 * [Prim](Graphs/Prim/prim.cpp)
 * Kruskal
 * Topological Sort
+* [Lowest Common Ancestor](Graphs/Lowest-Common-Ancestor/lca.cpp)
 
 ### Mathematics
 * [Primal Test](Mathematics/PrimalTest/O(sqrt(n)).cpp)
