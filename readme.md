@@ -7,8 +7,6 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 * [Fast IO](Tips-and-Tricks/Fast-IO/readme.md)
 * [IO Utils](Tips-and-Tricks/IO-Utils/readme.md)
 
-### Basics
-
 ### Searching and Sorting
 * Binary Search
 * Quick Sort
@@ -29,7 +27,7 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 
 ### Graphs
 * [Depth First Search](Graphs/Depth-First-Search/dfs.cpp)
-* Breadth First Search
+* [Breadth First Search](Graphs/Breadth-First-Search/bfs.cpp)
 * [Dijkstra](Graphs/Dijkstra/dijkstra.cpp)
 * [Floyd Warshall](Graphs/Floyd-Warshall/floyd.cpp)
 * [Prim](Graphs/Prim/prim.cpp)
