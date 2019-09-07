@@ -54,5 +54,5 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 * Minimum Partition
 * Longest Path in a Matrix
 * Subset Sum
-* Knapsack Problem
+* [Knapsack Problem](Dynamic-Programming/Knapsack/knap.cpp)
 * [Max Sum](Dynamic-Programming/Max-Sum/sum.cpp)
