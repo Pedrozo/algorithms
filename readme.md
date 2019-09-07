@@ -13,6 +13,7 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 * Binary Search
 * Quick Sort
 * [Merge Sort](Searching-and-Sorting/Merge_Sort.cpp)
+* [KMP Pattern Search](Searching-and-Sorting/KMP-Pattern-Search/kmp.cpp)
 
 ### Data Structures
 * [Segment Tree](Data-Structures/Segment-Tree/)
