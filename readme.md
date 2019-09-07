@@ -55,4 +55,4 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 * Longest Path in a Matrix
 * Subset Sum
 * Knapsack Problem
-* [Max Sum](Dynamic-Programming/Max_Sum.cpp)
+* [Max Sum](Dynamic-Programming/Max-Sum/sum.cpp)
