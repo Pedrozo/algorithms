@@ -40,6 +40,7 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 * [Primal Test](Mathematics/PrimalTest/O(sqrt(n)).cpp)
 * [Euclidean Algorithm](Mathematics/Euclidean-Algorithm/gcd.cpp)
 * [Convex Hull](Mathematics/Convex_Hull.cpp)
+* [Closest Pair](Mathematics/ClosestPairProblem.cpp)
 
 ### Dynamic Programming
 * Fibonacci
@@ -48,7 +49,7 @@ Algoritmos e técnicas utilizadas em programação competitiva.
   * [Bottom Up Memoization](Dynamic-Programming/Fibonacci/fib_bottom_up.cpp)
   * [Bottom Up Memoization O(1) Memory](Dynamic-Programming/Fibonacci/fib_bottom_up_lowmem.cpp)
 * [Longest Common Subsequence](Dynamic-Programming/Longest-Common-Subsequence/lcs.cpp)
-* Longest Increasing Subsequence
+* [Longest Increasing Subsequence](Dynamic-Programming/longest-increasing-subsequence/longest-increasing-subsequence.cpp)
 * Edit Distance
 * Minimum Partition
 * Longest Path in a Matrix
