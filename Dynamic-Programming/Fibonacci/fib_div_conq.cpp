@@ -1,7 +1,7 @@
 /**
  * Problema de fibonacci utilizando divisão e conquista
  * 
- * Tempo: O(n)
+ * Tempo: O(2^n)
  * Espaço: O(n)
  */
 

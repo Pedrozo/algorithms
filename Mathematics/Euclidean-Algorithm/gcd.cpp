@@ -1,3 +1,6 @@
+/*
+*   Maior divisor comum
+*/
 #include <iostream>
 
 using namespace std;
