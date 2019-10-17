@@ -39,7 +39,9 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 ### Mathematics
 * [Primal Test](Mathematics/PrimalTest/O(sqrt(n)).cpp)
 * [Euclidean Algorithm](Mathematics/Euclidean-Algorithm/gcd.cpp)
-* [Convex Hull](Mathematics/Convex_Hull.cpp)
+* Convex Hull
+  * [Convex Hull O(N^2)](Mathematics/ConvexHull/Convex_Hull.cpp)
+  * [Convex Hull O(N lonN)](Mathematics/ConvexHull/Convex_Hull_Optmized.cpp)
 * [Closest Pair](Mathematics/ClosestPairProblem.cpp)
 
 ### Dynamic Programming
