@@ -19,6 +19,7 @@ Algoritmos e técnicas utilizadas em programação competitiva.
   * [Range Minimum Query](Data-Structures/Segment-Tree/rmq.cpp)
   * [Count Zeros](Data-Structures/Segment-Tree/count-zeros.cpp)
   * [Lazy Propagation](Data-Structures/Segment-Tree/lazy.cpp)
+* [Disjoint Sets (Union Find)](Data-Structures/Disjoint-Sets/union-find.cpp)
 
 ### Strings
 * Sufix Array
