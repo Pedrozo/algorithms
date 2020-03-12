@@ -4,7 +4,9 @@
  * Menor distância entre um vértice e todos os outros
  * Testado em: https://www.hackerrank.com/challenges/dijkstrashortreach/problem
  */
+
 #include <bits/stdc++.h>
+
 #define pii pair<int, int>
 #define INF (int) 1e9
 #define SIZE 10100
@@ -38,13 +40,14 @@ void dijkstra(int s) {
             continue;
         }
 
+        proc[v] = true;
+
         // todos os vizinhos de v
         for (pii p : adj[v]) {
             int u = p.second; // vértice
             int d = p.first;  // distância de v até u
 
             if (d + dist[v] < dist[u]) {
-                proc[v] = true;
                 fila.push(make_pair(d + dist[v], u));
                 dist[u] = d + dist[v];
             }
