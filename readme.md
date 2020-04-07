@@ -1,5 +1,4 @@
-# Competitive Programming
-Algoritmos e técnicas utilizadas em programação competitiva.
+# Algoritmos
 
 ## Tópicos
 
@@ -8,7 +7,7 @@ Algoritmos e técnicas utilizadas em programação competitiva.
 * [IO Utils](Tips-and-Tricks/IO-Utils/readme.md)
 
 ### Searching and Sorting
-* Binary Search
+* [Binary Search](Searching-and-Sorting/Binary-Search/readme.md)
 * Quick Sort
 * [Merge Sort](Searching-and-Sorting/Merge_Sort.cpp)
 * [KMP Pattern Search](Searching-and-Sorting/KMP-Pattern-Search/kmp.cpp)
