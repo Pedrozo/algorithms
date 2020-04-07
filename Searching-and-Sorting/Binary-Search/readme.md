@@ -23,7 +23,7 @@ O(log n)
  * retorna a posição do elemento ou -1 se não encontrado
  */
 int bsearch(int a[], int x, int low, int high) {
-    if (low > end)
+    if (low > high)
         return -1;
 
     int mid = (low + high) / 2;
@@ -48,13 +48,13 @@ int bsearch(int a[], int x, int low, int high) {
         int mid = (low + high) / 2;
         
         if (x < a[mid])
-            high = high - 1;
+            high = mid - 1;
         else if (x > a[mid])
-            low = high + 1;
+            low = mid + 1;
         else
             return mid;
 
-    } while (low != high);
+    } while (low <= high);
 
     return -1;
 }
