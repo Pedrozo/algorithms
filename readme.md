@@ -13,6 +13,7 @@
 * [KMP Pattern Search](Searching-and-Sorting/KMP-Pattern-Search/kmp.cpp)
 
 ### Data Structures
+* [Binary Indexed Tree](Data-Structures/Binary-Indexed-Tree/readme.md)
 * [Segment Tree](Data-Structures/Segment-Tree/)
   * [Range Sum Query](Data-Structures/Segment-Tree/rsq.cpp)
   * [Range Minimum Query](Data-Structures/Segment-Tree/rmq.cpp)
