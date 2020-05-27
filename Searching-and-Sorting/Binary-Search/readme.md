@@ -60,5 +60,5 @@ int bsearch(int a[], int x, int low, int high) {
 }
 ```
 
-### Problemas
+## Problemas
 * [Maratona Brasileira de Comedores de Pipoca - Maratona de Programação 2019, SBC](Problems/maratona-comedores-de-pipoca.cpp)

@@ -19,7 +19,7 @@
   * [Range Minimum Query](Data-Structures/Segment-Tree/rmq.cpp)
   * [Count Zeros](Data-Structures/Segment-Tree/count-zeros.cpp)
   * [Lazy Propagation](Data-Structures/Segment-Tree/lazy.cpp)
-* [Disjoint Sets (Union Find)](Data-Structures/Disjoint-Sets/union-find.cpp)
+* [Disjoint Sets (Union Find)](Data-Structures/Disjoint-Sets/readme.md)
 
 ### Strings
 * Sufix Array
