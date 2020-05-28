@@ -27,7 +27,7 @@
 * [Sufix Automata](Strings/Sufix_Automata.cpp)
 
 ### Graphs
-* [Depth First Search](Graphs/Depth-First-Search/dfs.cpp)
+* [Depth First Search](Graphs/Depth-First-Search/readme.md)
 * [Breadth First Search](Graphs/Breadth-First-Search/bfs.cpp)
 * [Cycle Finding](Graphs/Cycle-Finding/cycles.cpp)
 * [Dijkstra](Graphs/Dijkstra/dijkstra.cpp)
