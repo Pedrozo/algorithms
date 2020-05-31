@@ -1,6 +1,6 @@
 # Depth First Search
 
-## Objetivo
+## Objetivos
 * Em um [grafo](https://en.wikipedia.org/wiki/Graph_theory), a partir de uma vértice qualquer de origem, encontrar o primeiro caminho lexicográfico.
 * Em uma [árvore](https://en.wikipedia.org/wiki/Tree_(graph_theory)), checar se um vértice é ancestral de um outro vértice.
 * Em uma árvore, encontrar o [Menor Ancestral Comum](https://en.wikipedia.org/wiki/Lowest_common_ancestor) entre dois vértices.
@@ -8,11 +8,12 @@
 * Encontrar [componentes fortemente conexos](https://en.wikipedia.org/wiki/Strongly_connected_component).
 * Encontrar [arestas de corte](https://en.wikipedia.org/wiki/Bridge_(graph_theory)) (pontes) de um grafo.
 
+## Aplicações e Variações
+* [Ancestralidade de vértices em árvores](Tree-Vertex-Ancestrality/readme.md)
+* 
+
 ## Complexidade
 * *O(n + m)*, onde *n* é o número de vértices e *m* de arestas.
-
-## Referências
-* [CP Algorithms](https://cp-algorithms.com/graph/depth-first-search.html)
 
 ## Implementação
 ```c++
@@ -38,4 +39,7 @@ void dfs(int v) {
 ```
 
 ## Problemas
-* [Componentes Conexos - URI Online Judge](dfs.cpp)
+* [Componentes Conexos - URI Online Judge](Problems/Componentes-Conexos.cpp)
+
+## Referências
+* [CP Algorithms](https://cp-algorithms.com/graph/depth-first-search.html)
