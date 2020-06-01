@@ -8,7 +8,6 @@
 
 ## Implementação
 ```c++
-int n; // número de vértices
 vector<int> adj[MAX_N]; // lista de adjacência
 int entry[MAX_N];       // momento de chegada no vértice
 int egress[MAX_N];      // momento de saída do vértice

@@ -10,29 +10,28 @@
 
 ## Aplicações e Variações
 * [Ancestralidade de vértices em árvores](Tree-Vertex-Ancestrality/readme.md)
-* 
+* [Ciclos em grafos](Graph-Cycle/readme.md)
 
 ## Complexidade
 * *O(n + m)*, onde *n* é o número de vértices e *m* de arestas.
 
 ## Implementação
 ```c++
-int n; // número de vértices
-bool visitado[MAX_N]; // vértices já vistos na busca
+bool visited[MAX_N]; // vértices já vistos na busca
 vector<int> adj[MAX_N]; // lista de adjacência
 
 /* adiciona uma aresta entre os vértices u e v */
-void conectar(int u, int v) {
+void connect(int u, int v) {
     adj[u].push_back(v);
     adj[v].push_back(u);
 }
 
 /* busca em profundidade a partir do vértice v */
 void dfs(int v) {
-    visitado[v] = true;
+    visited[v] = true;
 
     for (int u : adj[v]) {
-        if (!visitado[v])
+        if (!visited[v])
             dfs(u);
     }
 }
