@@ -31,7 +31,6 @@
   * [Tree Vertex Ancestrality](Graphs/Depth-First-Search/Tree-Vertex-Ancestrality/readme.md)
   * [Graph Cycle](Graphs/Depth-First-Search/Graph-Cycle/readme.md)
 * [Breadth First Search](Graphs/Breadth-First-Search/bfs.cpp)
-* [Cycle Finding](Graphs/Cycle-Finding/cycles.cpp)
 * [Dijkstra](Graphs/Dijkstra/dijkstra.cpp)
 * [Floyd Warshall](Graphs/Floyd-Warshall/floyd.cpp)
 * [Prim](Graphs/Prim/prim.cpp)
