@@ -11,6 +11,7 @@
 ## Aplicações e Variações
 * [Ancestralidade de vértices em árvores](Tree-Vertex-Ancestrality/readme.md)
 * [Ciclos em grafos](Graph-Cycle/readme.md)
+* [Pontes](Bridge/readme.md)
 
 ## Complexidade
 * *O(n + m)*, onde *n* é o número de vértices e *m* de arestas.
