@@ -242,3 +242,25 @@ int find_kth(int node, range_t range, int k) {
         return find_kth(right(node), {range.mid() + 1, range.upper}, k - tree[left(node)]);
 }
 ```
+Em um intervalo delimitado por *l* e *r*, encontrar o subintervalo com soma máxima.
+```c++
+struct data_t {
+    int sum;  // soma dos elementos
+    int pref; // prefixo com soma máxima
+    int suff; // sufixo com soma máxima
+    int ans;  // soma máxima em um subsegmento
+};
+
+data_t make_data(int val) {
+    return {val, val, val, val};
+}
+
+data_t combine(data_t l, data_t r) {
+    data_t d;
+    d.sum = l.sum + r.sum;
+    d.pref = max(l.pref, l.sum + r.pref);
+    d.suff = max(r.suff, r.sum + l.suff);
+    d.ans = max(max(l.ans, r.ans), l.suff + r.pref);
+    return d;
+}
+```
