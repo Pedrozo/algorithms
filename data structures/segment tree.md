@@ -15,7 +15,7 @@
 * [CP Algorithms](https://cp-algorithms.com/data_structures/segment_tree.html)
 
 ## Implementação
-**Importante:** A função *combine*, o tipo *data_t* e a constante *NEUTRAL* variam para diferentes comportamentos da árvore de segmentos
+**Importante:** A função *combine*, *make_data* e o tipo *data_t* podem ter diferentes implementações para levar a diferentes comportamentos da árvore de segmentos
 
 Macros:
 ```c++
@@ -25,7 +25,7 @@ Macros:
 ```
 Estrutura: (permite que o código fique mais limpo, a um pequeno custo de desempenho)
 ```c++
-struct Segment {
+struct range_t {
     int lower;
     int upper;
 
@@ -34,13 +34,8 @@ struct Segment {
     }
 
     // se os extremos de s estão "dentro" deste segmento
-    bool contains(Segment s) {
+    bool contains(range_t s) {
         return lower <= s.lower && upper >= s.upper;
-    }
-
-    // se os segmentos possuem algum ponto em comum
-    bool intersect(Segment s) {
-        return lower <= s.upper && upper >= s.lower;
     }
 };
 ```
@@ -48,13 +43,13 @@ struct Segment {
 Variáveis Globais:
 ```c++
 int n; // quantidade de elementos em arr
-data_t arr[MAX_N];
+int arr[MAX_N];
 data_t tree[MAX_N * 4];
 ```
 
 Inicializar a árvore de segmentos:
 ```c++
-void build(int node, Segment bounds) {
+void build(int node, range_t bounds) {
     if (bounds.lower == bounds.upper) {
         tree[node] = arr[bounds.lower];
         return;
@@ -69,45 +64,54 @@ void build(int node, Segment bounds) {
 
 Range Query:
 ```c++
-data_t query(int node, Segment bounds, Segment query_bounds) {
-    if (query_bounds.contains(bounds))
+data_t query(int node, range_t range, range_t query_range) {
+    if (query_range.contains(range))
         return tree[node];
 
-    if (!query_bounds.intersect(bounds))
-        return NEUTRAL; // no fim da página existem possíveis valores para esta constante
+    data_t lq, rq;
+    bool cl = query_range.lower <= range.mid();
+    bool cr = query_range.upper > range.mid();
 
-    int q1 = query(left(node), {bounds.lower, bounds.mid()}, query_bounds);
-    int q2 = query(right(node), {bounds.mid() + 1, bounds.upper}, query_bounds);
+    if (cl)
+        lq = query(left(node), {range.lower, range.mid()}, query_range);
 
-    return combine(q1, q2);
+    if (cr)
+        rq = query(right(node), {range.mid() + 1, range.upper}, query_range);
+
+    if (cl && cr)
+        return combine(lq, rq);
+    else if (cl)
+        return lq;
+    else
+        return rq;
 }
 ```
 
 Point Update:
 ```c++
-void update(int node, Segment bounds, int idx, int val) {
-    if (bounds.lower == bounds.upper) {
+void update(int node, range_t range, int idx, int val) {
+    if (range.lower == range.upper) {
         tree[node] = val;
-        arr[bounds.lower] = val;
+        arr[range.lower] = val;
         return;
     }
 
-    if (idx <= bounds.mid())
-        update(left(node), {bounds.lower, bounds.mid()}, idx, val);
+    if (idx <= range.mid())
+        update(left(node), {range.lower, range.mid()}, idx, val);
     else
-        update(right(node), {bounds.mid() + 1, bounds.upper}, idx, val);
+        update(right(node), {range.mid() + 1, range.upper}, idx, val);
 
     tree[node] = combine(tree[left(node)], tree[right(node)]);
 }
 ```
 
-Como as funções *build*, *query* e *update* possuem valores padrões para os argumentos *node* e *bounds*, é possível sobrecarregar essas funções a fim de facilitar sua utilização.
+Como as funções *build*, *query* e *update* possuem valores padrões para os argumentos *node* e *range* na primeira chamada, é possível sobrecarregar essas funções a fim de facilitar sua utilização.
 ```c++
 void build() {
     build(1, {1, n});
 }
 
-int query(int l, int u) {
+data_t query(int l, int u) {
     return query(1, {1, n}, {l, u});
 }
 
@@ -121,8 +125,11 @@ O grosso do algoritmo da árvore de segmentos é igual em suas variações. Abai
 
 Range Minimum Query - Menor elemento em um intervalo
 ```c++
-#define NEUTRAL 1e9 // assumindo que nenhum elemento será maior que isso
 typedef int data_t;
+
+data_t make_data(int val) {
+    return val;
+}
 
 data_t combine(data_t a, data_t b) {
     return min(a, b);
@@ -131,19 +138,47 @@ data_t combine(data_t a, data_t b) {
 
 Range Sum Query - Soma de elementos em um intervalo:
 ```c++
-#define NEUTRAL 0
 typedef int data_t;
+
+data_t make_data(int val) {
+    return val;
+}
 
 data_t combine(data_t a, data_t b) {
     return a + b;
+}
+
+/*
+ * retorna o míndice que define o menor prefixo em que a soma 
+ * de seus elementos é igual ou maior que val
+ */
+int pref_sum(int node, range_t bnds, int val) {
+    if (val > tree[node])
+        return -1;
+    
+    if (bnds.lower == bnds.upper)
+        return bnds.lower;
+    
+    if (val <= tree[left(node)])
+        return pref_sum(left(node), {bnds.lower, bnds.mid()}, val);
+    else
+        return pref_sum(right(node), {bnds.mid() + 1, bnds.upper}, val - tree[left(node)]);
+}
+
+/* sobrecarga para utilização mais simples */
+int pref_sum(int val) {
+    return pref_sum(1, {1, n}, val);
 }
 ```
 
 O maior elemento, e a quantidade vezes que aparece:
 ```c++
 /* o primeiro elemento do pair é o valor do elemento; o segundo, quantas vezes aparece */
-#define NEUTRAL {(int) -1e9, 0}
 typedef pair<int, int> data_t
+
+data_t make_data(int val) {
+    return {val, 1};
+}
 
 data_t combine(data_t a, data_t b) {
     if (a.first > b.first)
@@ -158,8 +193,11 @@ data_t combine(data_t a, data_t b) {
 
 GCD - Maior divisor comum em um intervalo:
 ```c++
-#define NEUTRAL 0
 typedef int data_t
+
+data_t make_data(int val) {
+    return val;
+}
 
 int gcd(int a, int b) {
     return b ? gcd(b, a % b) : a;
@@ -177,8 +215,11 @@ data_t combine(data_t a, data_t b) {
 ```
 Quantidade de zeros, e encontrar o k-ésimo zero:
 ```c++
-#define NEUTRAL 0
 typedef int data_t
+
+data_t make_data(int val) {
+    return val == 1;
+}
 
 data_t combine(data_t a, data_t b) {
     return a + b;
@@ -188,16 +229,16 @@ data_t combine(data_t a, data_t b) {
  * retorna o índice do k-ésimo 0 
  * retorna -1 caso não seja possível 
  */
-int find_kth(int node, Segment bounds, int k) {
+int find_kth(int node, range_t range, int k) {
     if (k > tree[node])
         return -1;
     
-    if (bounds.lower == bounds.upper)
-        return bounds.lower;
+    if (range.lower == range.upper)
+        return range.lower;
 
     if (k <= tree[left(node)])
-        return find_kth(left(node), {bounds.lower, bounds.mid()}, k);
+        return find_kth(left(node), {range.lower, range.mid()}, k);
     else
-        return find_kth(right(node), {bounds.mid() + 1, bounds.upper}, k - tree[left(node)]);
+        return find_kth(right(node), {range.mid() + 1, range.upper}, k - tree[left(node)]);
 }
 ```
