@@ -13,6 +13,7 @@
 * [KMP Pattern Search](Searching-and-Sorting/KMP-Pattern-Search/kmp.cpp)
 
 ### Data Structures
+* [Trie](Data-Structures/Trie/readme.md)
 * [Binary Indexed Tree](Data-Structures/Binary-Indexed-Tree/readme.md)
 * [Segment Tree](data%20structures/segment%20tree.md)
   * [Range Sum Query](Data-Structures/Segment-Tree/rsq.cpp)
@@ -20,6 +21,7 @@
   * [Count Zeros](Data-Structures/Segment-Tree/count-zeros.cpp)
   * [Lazy Propagation](Data-Structures/Segment-Tree/lazy.cpp)
 * [Disjoint Sets (Union Find)](Data-Structures/Disjoint-Sets/readme.md)
+
 
 ### Strings
 * Sufix Array
