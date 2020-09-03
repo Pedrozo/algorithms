@@ -13,7 +13,7 @@
 * [KMP Pattern Search](Searching-and-Sorting/KMP-Pattern-Search/kmp.cpp)
 
 ### Data Structures
-* [Trie](Data-Structures/Trie/readme.md)
+* [Trie](https://github.com/Pedrozo/algorithms/tree/master/data%20structures/Trie)
 * [Binary Indexed Tree](Data-Structures/Binary-Indexed-Tree/readme.md)
 * [Segment Tree](data%20structures/segment%20tree.md)
   * [Range Sum Query](Data-Structures/Segment-Tree/rsq.cpp)
