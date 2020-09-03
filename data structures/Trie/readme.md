@@ -83,4 +83,6 @@ bool search(Trie *root, string str)
 
 ## Problemas
 
-- [Hacker Rank - Contacts](https://www.hackerrank.com/challenges/contacts/problem)
+- [Hacker Rank - Contacts](https://www.hackerrank.com/challenges/contacts/problem) ([Solução](https://github.com/Pedrozo/algorithms/blob/master/data%20structures/Trie/hr_contacts.cpp))
+- [Hacker Rank - No prefix set](https://www.hackerrank.com/challenges/no-prefix-set/problem) ([Solução](https://github.com/Pedrozo/algorithms/blob/master/data%20structures/Trie/hr_no_prefix_set.cpp))
+- [URI - Conjuntos Bons e Ruins](https://www.urionlinejudge.com.br/judge/pt/problems/view/2087) ([Solução](https://github.com/Pedrozo/algorithms/blob/master/data%20structures/Trie/URI2087.cpp))
